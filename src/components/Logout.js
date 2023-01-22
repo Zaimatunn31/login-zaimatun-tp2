@@ -17,13 +17,13 @@ function Logout ({ showModalIdle, setShowModalIdle, setPayload }){
             <Modal show={showModalIdle} onHide={() => setShowModalIdle(false)}>
                 <Modal.Header closeButton>
                 </Modal.Header>
-                <Modal.Body>Are you still there?</Modal.Body>
+                <Modal.Body>It's been 30 seconds of inactivity, please logout!</Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>
                 <Button variant="danger" onClick={handleStop}>
-                    Stop
+                    Logout
                 </Button>
                 </Modal.Footer>
             </Modal>

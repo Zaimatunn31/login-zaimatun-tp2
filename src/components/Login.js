@@ -17,7 +17,7 @@ function Login ({ showModal, setShowModal, setPayload }){
 
         if(counter === 3){
             setDisabled(true)
-            setErrMsg(`Incorrect 3 times. Please wait ${countdown} seconds`)
+            setErrMsg(`You Have Wrong Login for 3 Times. Please wait ${countdown} seconds`)
             setShow(false)
 
             if(countdown > 0) {
@@ -46,7 +46,7 @@ function Login ({ showModal, setShowModal, setPayload }){
         }else{   
             setShow(true)
             setCounter(counter + 1)
-            setErrMsg('Email or password incorrect')
+            setErrMsg('Email or Password Incorrect')
         }
     }
 
@@ -69,7 +69,7 @@ function Login ({ showModal, setShowModal, setPayload }){
         <>
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
-                <Modal.Title>Login Form</Modal.Title>
+                <Modal.Title>Login</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                 { show && 
@@ -87,11 +87,11 @@ function Login ({ showModal, setShowModal, setPayload }){
                 <form onSubmit={onSubmit} >
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email</label>
-                        <input type="email" className={`form-control ${errClass}`} id="email" name="email" aria-describedby="emailHelp" placeholder="Ex : test@mailinator.com"/>
+                        <input type="email" className={`form-control ${errClass}`} id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email"/>
                     </div>
                     <div className="form-group my-3">
                         <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className={`form-control ${errClass}`} id="password" name="password" placeholder="Password"/>
+                        <input type="password" className={`form-control ${errClass}`} id="password" name="password" placeholder="Enter Password"/>
                     </div>
                     <button type="submit" className="btn btn-primary w-100" disabled={disabled}>Submit</button>
                 </form>
